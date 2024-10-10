@@ -1,13 +1,11 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { FaSearch } from "react-icons/fa";
 import { RiMapFill } from "react-icons/ri";
 import { GoHomeFill } from "react-icons/go";
 import { PiCrownSimpleFill } from "react-icons/pi";
-import { LuCrown } from "react-icons/lu";
-import { RiVipCrownFill } from "react-icons/ri";
-import { bebas, dmSans } from "@/app/ui/fonts";
+import { dmSans } from "@/app/ui/fonts";
 import Link from "next/link";
 
 export const Header = () => {
