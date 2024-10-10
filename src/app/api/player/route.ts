@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import axios from "axios";
 
-const BRAWL_API_URL = "https://api.brawlstars.com/v1";
+const BRAWL_API_URL = "https://bsproxy.royaleapi.dev/v1";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
