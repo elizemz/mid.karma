@@ -1,101 +1,251 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
+"use client";
+import { Guide } from "@/components/Guide";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="w-screen h-screen bg-gradient-to-b flex flex-col justify-center m-auto from-indigo-950 to-[#12102e]">
+      <div className="flex flex-col justify-center m-auto">
+        <div className="flex justify-center">
+          <Guide />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <div className="mt-8 flex justify-center flex-col gap-3">
+          <div className="flex flex-row justify-center items-center">
+            1. Your current trophies -
+            <div className="flex items-center bg-gray-950 rounded-t w-max max-h-7 px-1">
+              <p className="text-2xl">751</p>
+            </div>
+          </div>
+          <div className="flex flex-row items-center justify-center">
+            2. Record trophy count -
+            <div className="flex items-center bg-gray-950 rounded-t w-max max-h-7 px-1">
+              <p className="text-xl text-gray-400">(926)</p>
+            </div>
+          </div>
+          <div className="flex flex-row items-center justify-center">
+            3. Click
+            <div className="z-20">
+              <img
+                className="peer w-max h-8"
+                src="https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoic3VwZXJjZWxsXC9maWxlXC9oV3NONHZBTTdoNGg1bWYyOTZCZS5wbmcifQ:supercell:t7rsf5lIrYT9rpnnvYJiTOc0vuuOEreIWLdktDue1wM?width=2400"
+              />
+            </div>
+            for mastery point info.
+          </div>
+        </div>
+      </div>
+    </main>
   );
 }
+// /* eslint-disable @next/next/no-img-element */
+// "use client";
+
+// import { useState } from "react";
+// import axios from "axios";
+// import { Brawlers } from "@/components/Brawlers";
+// import { Guide } from "@/components/Guide";
+
+// interface Club {
+//   name: string;
+//   tag: string;
+// }
+
+// interface Brawler {
+//   id: number;
+//   name: string;
+//   rank: number;
+//   trophies: number;
+//   highestTrophies: number;
+//   power: number;
+//   starPowers: string;
+//   gadgets: string;
+//   gears: string;
+//   Mastery: string;
+// }
+
+// interface PlayerData {
+//   name: string;
+//   tag: string;
+//   trophies: number;
+//   highestTrophies: number;
+//   expLevel: number;
+//   "3vs3Victories": number;
+//   soloVictories: number;
+//   duoVictories: number;
+//   club?: Club;
+//   brawlers: Brawler[];
+//   icon: {
+//     id: number;
+//   };
+// }
+
+// export default function HomePage() {
+//   const [playerTag, setPlayerTag] = useState<string>("");
+//   const [playerData, setPlayerData] = useState<PlayerData | null>(null);
+//   const [error, setError] = useState<string>("");
+//   const [playerIcon, setPlayerIcon] = useState<string>("");
+//   const [sortBy, setSortBy] = useState<
+//     "release" | "name" | "power" | "trophyDesc" | "trophyAsc"
+//   >("release");
+
+//   const fetchIconUrl = async (iconId: number): Promise<void> => {
+//     try {
+//       const response = await axios.get("https://api.brawlapi.com/v1/icons");
+//       if (response.status !== 200) {
+//         throw new Error("Error getting icons from BrawlAPI");
+//       }
+//       const iconUrl = response.data.player[iconId].imageUrl;
+//       setPlayerIcon(iconUrl);
+//     } catch (err) {
+//       console.error("Failed to fetch icon:", err);
+//       setPlayerIcon("");
+//     }
+//   };
+
+//   const handleFetchPlayerData = async () => {
+//     try {
+//       const response = await axios.get(
+//         `/api/player?tag=%23${encodeURIComponent(playerTag)}`
+//       );
+//       setPlayerData(response.data);
+//       setError("");
+//       if (response.data.icon?.id) {
+//         fetchIconUrl(response.data.icon.id);
+//       }
+//     } catch (error) {
+//       setError("Player not found or an error occurred.");
+//       setPlayerData(null);
+//     }
+//   };
+
+//   const sortBrawlers = (
+//     brawlers: Brawler[],
+//     criterion: "release" | "name" | "power" | "trophyDesc" | "trophyAsc"
+//   ) => {
+//     return [...brawlers].sort((a, b) => {
+//       if (criterion === "name") {
+//         return a.name.localeCompare(b.name);
+//       }
+//       if (criterion === "trophyDesc") {
+//         return b.trophies - a.trophies;
+//       }
+//       if (criterion === "trophyAsc") {
+//         return a.trophies - b.trophies;
+//       }
+//       if (criterion === "power") {
+//         return b.power - a.power;
+//       } else {
+//         return a.id - b.id;
+//       }
+//     });
+//   };
+
+//   const sortedBrawlers = playerData?.brawlers
+//     ? sortBrawlers(playerData.brawlers, sortBy)
+//     : [];
+
+//   return (
+//     <main>
+//       <div className="w-screen h-full flex">
+//         <div className="flex justify-center m-auto flex-col">
+//           <div className="flex justify-center m-auto flex-col">
+//             <h1>Brawl Stars Player Search</h1>
+//             <input
+//               placeholder="Your Player TAG!"
+//               value={playerTag}
+//               onChange={(e) => setPlayerTag(e.target.value)}
+//               className="text-black uppercase"
+//             />
+//             <button
+//               onClick={handleFetchPlayerData}
+//               style={{ padding: "5px 10px" }}
+//             >
+//               Search
+//             </button>
+//             {error && <p style={{ color: "red" }}>{error}</p>}
+//           </div>
+
+//           <Guide />
+
+//           {playerData && (
+//             <div className="flex flex-col">
+//               <div className="flex justify-center flex-col m-auto">
+//                 {playerIcon && (
+//                   <img
+//                     src={playerIcon}
+//                     alt="https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoic3VwZXJjZWxsXC9maWxlXC9YNk14UEFmOHpQcG5YdDZVd0oybS5wbmcifQ:supercell:F0FN7C_y_jY00qq08dr8WWuA9YvSWxio4CpdqxMSKa0?width=2400"
+//                     className="w-max h-64"
+//                   />
+//                 )}
+//                 <p>{playerData.name}</p>
+//                 <p className="uppercase">{playerData.tag}</p>
+//                 <p>{playerData.trophies} Trophies</p>
+//                 <p>Highest Trophies: {playerData.highestTrophies}</p>
+//                 <p>Exp Level: {playerData.expLevel}</p>
+//                 <p>3v3 Victories: {playerData["3vs3Victories"]}</p>
+//                 <p>Solo Victories: {playerData.soloVictories}</p>
+//                 <p>Duo Victories: {playerData.duoVictories}</p>
+
+//                 {playerData.club && (
+//                   <div>
+//                     <p>Club: {playerData.club.name}</p>
+//                     <p>Club Tag: {playerData.club.tag}</p>
+//                   </div>
+//                 )}
+//               </div>
+
+//               <div className="flex justify-center gap-4 my-4">
+//                 <button
+//                   onClick={() => setSortBy("release")}
+//                   className={`px-4 py-2 ${
+//                     sortBy === "release"
+//                       ? "bg-blue-500 text-white"
+//                       : "bg-gray-200"
+//                   }`}
+//                 >
+//                   Release
+//                 </button>
+//                 <button
+//                   onClick={() => setSortBy("trophyDesc")}
+//                   className={`px-4 py-2 ${
+//                     sortBy === "trophyDesc"
+//                       ? "bg-blue-500 text-white"
+//                       : "bg-gray-200"
+//                   }`}
+//                 >
+//                   Trophies
+//                 </button>
+//                 <button
+//                   onClick={() => setSortBy("power")}
+//                   className={`px-4 py-2 ${
+//                     sortBy === "power"
+//                       ? "bg-blue-500 text-white"
+//                       : "bg-gray-200"
+//                   }`}
+//                 >
+//                   Power
+//                 </button>
+//                 <button
+//                   onClick={() => setSortBy("name")}
+//                   className={`px-4 py-2 ${
+//                     sortBy === "name" ? "bg-blue-500 text-white" : "bg-gray-200"
+//                   }`}
+//                 >
+//                   Name
+//                 </button>
+//               </div>
+
+//               {sortedBrawlers.length > 0 && (
+//                 <ul className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+//                   {sortedBrawlers.map((brawler: Brawler) => (
+//                     <Brawlers key={brawler.id} brawler={brawler} />
+//                   ))}
+//                 </ul>
+//               )}
+//             </div>
+//           )}
+//         </div>
+//       </div>
+//     </main>
+//   );
+// }
