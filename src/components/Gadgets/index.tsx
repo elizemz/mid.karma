@@ -15,7 +15,7 @@ interface BrawlerProps {
   };
 }
 
-export const Brawlers = ({ brawler }: BrawlerProps) => {
+export const Gadget = ({ brawler }: BrawlerProps) => {
   const portraits: { [key: string]: string } = {
     "BUZZ LIGHTYEAR":
       "https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoic3VwZXJjZWxsXC9maWxlXC9VY0ZScUN6M1NEQXZmV1ZIOTJNUi5wbmcifQ:supercell:2zvB4PUFWzQ4-UG0anUV_8XqtUDCo4PbfQPi3pSjwj0?width=800",
@@ -157,196 +157,46 @@ export const Brawlers = ({ brawler }: BrawlerProps) => {
   return (
     <li className="group flex flex-col justify-center duration-100 m-1 lg:m-2.5 border-indigo-300 border-opacity-40 hover:border-opacity-100 border rounded-r rounded-t lg:scale-125">
       <div className="flex">
-        <div className="flex items-center bg-gray-950 rounded-t w-full w-max-[10px]">
-          <img
-            className="w-3 pointer-events-none"
-            src="https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoic3VwZXJjZWxsXC9maWxlXC9waFFBanJmTTd0bldQSEFQUTNTTS5wbmcifQ:supercell:uGkNlUITV98HQEBqST8RoyNlyyAA7-NCuOKpR45pPUU?width=2400"
-          />
-          <p className="text-[11px]">{brawler.trophies}</p>
-          {/* <p className="ml-1 text-gray-400 text-xs">
-            ({brawler.highestTrophies})
-          </p> */}
+        <div className="flex flex-row items-center bg-gray-950 rounded-t w-full w-max-[10px] gap-0.5">
+          <div className="flex ml-0.5">
+            <img
+              className="w-3 pointer-events-none my-0.5 z-10"
+              src="https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoic3VwZXJjZWxsXC9maWxlXC9xRjR3V2dRUkpaTFZWb1N1RzRHcC5wbmcifQ:supercell:f8PXh1UTPuVo7OXFOlyFSJyF2ifndzgsrBhQ-8CCYhA?width=800"
+            />
+            <p className="text-[9px] absolute ml-[3.5px] mt-[1px] z-20">
+              {brawler.gadgets.length}
+            </p>
+          </div>
+          <div className="flex">
+            <img
+              className="w-3 pointer-events-none my-0.5 z-10"
+              src="https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoic3VwZXJjZWxsXC9maWxlXC9IWmtMUjVpSFhiMjhiR2tZUTRnRy5wbmcifQ:supercell:huyiUL5vEn5QRW5FguBeriafcj_Sf6p8y-OHFNamp1w?width=800"
+            />
+            <p className="text-[9px] absolute ml-[3.5px] mt-[1px] z-20">
+              {brawler.starPowers.length}
+            </p>
+          </div>
+          <div className="flex">
+            <img
+              className="w-3 pointer-events-none my-0.5 z-10"
+              src="https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoic3VwZXJjZWxsXC9maWxlXC9VVHBWQVRhZFllWHZnZWFEcUJUUi5wbmcifQ:supercell:rK1JECiCSnEg5IhHcehnCXSoC0AR_2Vs68x9ndl_HB4?width=800"
+            />
+            <p className="text-[9px] absolute ml-[3.5px] mt-[1px] z-20">
+              {brawler.gears.length}
+            </p>
+          </div>
         </div>
       </div>
       <div
         className={`
-         w-12 flex relative z-10 bg-gradient-to-b from-inherit to-indigo-950 group-hover:to-violet-800 rounded-b `}
+        w-12 flex relative z-10 bg-gradient-to-b from-inherit to-indigo-950 group-hover:to-violet-800 rounded-b `}
       >
         <img
           src={portrait}
           className="h-6 w-max text-[6px]"
           alt={`${brawler.name}`}
         />
-        {/* <p className="text-white text-sm flex justify-center right-0 bottom-0 px-1 w-8 bg-black rounded-tl -mb-1 absolute z-10 uppercase">
-          {brawler.power}
-        </p> */}
       </div>
-      {/* <div
-        className={`${
-          brawler.power === 11 ? "bg-amber-500" : "bg-slate-800"
-        } w-28 sm:w-40 border-2 border-black border-t-0 z-20 h-[39px]`}
-      > */}
-      {/* <div
-          className={`${
-            brawler.power === 11 ? "bg-yellow-400" : "bg-slate-700"
-          } flex justify-center m-auto items-center w-[72px] sm:w-28 -skew-x-6 h-[36.5px] lg:h-[37.1px]`}
-        >
-          <div className="right-0-2 justify-center text-xl py-1 flex gap-1 flex-row text-white drop-shadow-[1px_2px_rgba(1,1,1,1)] skew-x-6">
-            <div
-              className={`${
-                brawler.gadgets.length === 0 ? "opacity-0 absolute" : ""
-              } w-7`}
-            >
-              <p
-                className={`${
-                  brawler.gadgets.length === 1 ? "ml-[9.5px]" : "ml-[8.5px]"
-                } drop-shadow-[1px_2px_rgba(1,1,1,1)] absolute z-30`}
-              >
-                {brawler.gadgets.length}
-              </p>
-              <img
-                className="z-10"
-                src="https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoic3VwZXJjZWxsXC9maWxlXC9xRjR3V2dRUkpaTFZWb1N1RzRHcC5wbmcifQ:supercell:f8PXh1UTPuVo7OXFOlyFSJyF2ifndzgsrBhQ-8CCYhA?width=800"
-              />
-            </div>
-            <div
-              className={`${
-                brawler.starPowers.length === 0 ? "opacity-0 absolute" : ""
-              } w-7`}
-            >
-              <p
-                className={`${
-                  brawler.starPowers.length === 1 ? "ml-[9.5px]" : "ml-[8.5px]"
-                } drop-shadow-[1px_2px_rgba(1,1,1,1)] absolute z-30`}
-              >
-                {brawler.starPowers.length}
-              </p>
-              <img
-                className="z-10"
-                src=""
-              />
-            </div>
-            <div
-              className={`${
-                brawler.gears.length === 0 ? "opacity-0 absolute" : ""
-              } w-7`}
-            >
-              <p
-                className={`${
-                  brawler.gears.length === 1
-                    ? "ml-[9.5px]"
-                    : brawler.gears.length === 3
-                    ? "ml-[9px]"
-                    : brawler.gears.length === 4
-                    ? "ml-[7.5px]"
-                    : brawler.gears.length === 5
-                    ? "ml-[9px]"
-                    : brawler.gears.length === 6
-                    ? "ml-[8px]"
-                    : "ml-[8.5px]"
-                } drop-shadow-[1px_2px_rgba(1,1,1,1)] absolute z-30`}
-              >
-                {brawler.gears.length}
-              </p>
-              <img
-                className="z-10"
-                src=""
-              />
-            </div>
-          </div>
-        </div> */}
-      {/* </div> */}
     </li>
   );
 };
-
-// ${
-// brawler.name === "EL PRIMO" ||
-// brawler.name === "BULL" ||
-// brawler.name === "ROSA" ||
-// brawler.name === "POCO" ||
-// brawler.name === "BARLEY" ||
-// brawler.name === "BROCK" ||
-// brawler.name === "COLT" ||
-// brawler.name === "NITA"
-//   ? "bg-[#70ff66]"
-//   : brawler.name === "JACKY" ||
-//     brawler.name === "8-BIT" ||
-//     brawler.name === "JESSIE" ||
-//     brawler.name === "TICK" ||
-//     brawler.name === "CARL" ||
-//     brawler.name === "RICO" ||
-//     brawler.name === "GUS" ||
-//     brawler.name === "DARRYL" ||
-//     brawler.name === "PENNY" ||
-//     brawler.name === "DYNAMIKE"
-//   ? "bg-[#5c87ff]"
-//   : brawler.name === "EMZ" ||
-//     brawler.name === "BO" ||
-//     brawler.name === "STU" ||
-//     brawler.name === "PIPER" ||
-//     brawler.name === "PAM" ||
-//     brawler.name === "FRANK" ||
-//     brawler.name === "BEA" ||
-//     brawler.name === "BIBI" ||
-//     brawler.name === "BELLE" ||
-//     brawler.name === "NANI" ||
-//     brawler.name === "GALE" ||
-//     brawler.name === "COLETTE" ||
-//     brawler.name === "GROM" ||
-//     brawler.name === "GRIFF" ||
-//     brawler.name === "EDGAR" ||
-//     brawler.name === "ASH" ||
-//     brawler.name === "LOLA" ||
-//     brawler.name === "BONNIE" ||
-//     brawler.name === "SAM" ||
-//     brawler.name === "MANDY" ||
-//     brawler.name === "BERRY" ||
-//     brawler.name === "ANGELO" ||
-//     brawler.name === "LARRY & LAWRIE" ||
-//     brawler.name === "MAISIE" ||
-//     brawler.name === "PEARL" ||
-//     brawler.name === "HANK"
-//   ? "bg-[#db59ff]"
-//   : brawler.name === "MORTIS" ||
-//     brawler.name === "GENE" ||
-//     brawler.name === "TARA" ||
-//     brawler.name === "SPROUT" ||
-//     brawler.name === "BYRON" ||
-//     brawler.name === "SQUEAK" ||
-//     brawler.name === "R-T" ||
-//     brawler.name === "MR. P" ||
-//     brawler.name === "MAX" ||
-//     brawler.name === "LOU" ||
-//     brawler.name === "RUFFS" ||
-//     brawler.name === "BUZZ" ||
-//     brawler.name === "EVE" ||
-//     brawler.name === "WILLOW" ||
-//     brawler.name === "MOE" ||
-//     brawler.name === "CLANCY" ||
-//     brawler.name === "MELODIE" ||
-//     brawler.name === "FANG" ||
-//     brawler.name === "JANET" ||
-//     brawler.name === "OTIS" ||
-//     brawler.name === "BUSTER" ||
-//     brawler.name === "GRAY" ||
-//     brawler.name === "DOUG" ||
-//     brawler.name === "CHARLIE" ||
-//     brawler.name === "CHUCK" ||
-//     brawler.name === "MICO" ||
-//     brawler.name === "LILY"
-//   ? "bg-[#ff4548]"
-//   : brawler.name === "SPIKE" ||
-//     brawler.name === "CROW" ||
-//     brawler.name === "LEON" ||
-//     brawler.name === "SANDY" ||
-//     brawler.name === "AMBER" ||
-//     brawler.name === "MEG" ||
-//     brawler.name === "CHESTER" ||
-//     brawler.name === "KIT" ||
-//     brawler.name === "DRACO" ||
-//     brawler.name === "KENJI" ||
-//     brawler.name === "CORDELIUS" ||
-//     brawler.name === "SURGE"
-//   ? "bg-yellow-300"
-//   : "bg-sky-300" }

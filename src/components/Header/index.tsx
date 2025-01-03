@@ -11,8 +11,6 @@ import Link from "next/link";
 export const Header = () => {
   const [playerTag, setPlayerTag] = useState<string>("");
   const router = useRouter();
-  //   const [showHeader, setShowHeader] = useState(true);
-  //   const [lastScrollTop, setLastScrollTop] = useState(0);
 
   const handleFetchPlayerData = () => {
     if (playerTag) {
@@ -20,37 +18,30 @@ export const Header = () => {
     }
   };
 
-  //   useEffect(() => {
-  //     const handleScroll = () => {
-  //       const currentScroll =
-  //         window.scrollY || document.documentElement.scrollTop;
-  //       if (currentScroll < lastScrollTop || currentScroll < 100) {
-  //         setShowHeader(true);
-  //       } else {
-  //         setShowHeader(false);
-  //       }
-  //       setLastScrollTop(currentScroll <= 0 ? 0 : currentScroll);
-  //     };
-
-  //     window.addEventListener("scroll", handleScroll);
-  //     return () => window.removeEventListener("scroll", handleScroll);
-  //   }, [lastScrollTop]);
+  const handleKeyPress = (event: { key: any }) => {
+    if (event.key === "Enter") return handleFetchPlayerData();
+  };
 
   return (
     <header
-      className={`w-screen bg-indigo-950 border-b-2 border-indigo-900 border-opacity-50 h-20 flex flex-row items-center justify-center`}
+      className={`w-screen bg-[#191640] border-b border-indigo-800 border-opacity-40 h-20 flex flex-row items-center justify-between`}
     >
       <div className="flex flex-row sm:justify-between m-auto items-center">
-        <img
-          className="w-max h-12 absolute left-0 mx-2.5"
-          src="https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoic3VwZXJjZWxsXC9maWxlXC9DSGJoTDRXcFd3dEJkWE1IYlFNSi5wbmcifQ:supercell:Y8HWi_58KUpyQL0DcpXAE-7bVvMfM6QXB2PujsjHJFQ?width=800"
-        />
-        <div
-          className={`${dmSans.className} flex tracking-tighter pointer-events-none opacity-0 font-medium sm:opacity-100 text-violet-300 text-2xl absolute left-0 ml-16 m-auto justify-center`}
+        <Link
+          className="absolute left-0 flex flex-row pointer-events-auto ml-1.5 xs:ml-3"
+          href="/"
         >
-          mid.karma
-        </div>
-        <div className="flex justify-center text-xl m-auto border-2 p-2  bg-gradient-to-b from-[#1b173f] to-indigo-950 border-indigo-900 border-opacity-100 rounded-2xl">
+          <img
+            className="w-max h-12"
+            src="https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoic3VwZXJjZWxsXC9maWxlXC9DSGJoTDRXcFd3dEJkWE1IYlFNSi5wbmcifQ:supercell:Y8HWi_58KUpyQL0DcpXAE-7bVvMfM6QXB2PujsjHJFQ?width=800"
+          />
+          <div
+            className={`${dmSans.className} flex tracking-tighter opacity-0 font-medium sm:opacity-100 text-violet-300 text-2xl m-auto justify-center`}
+          >
+            mid.karma
+          </div>
+        </Link>
+        <div className="flex justify-center text-xl m-auto border p-2  bg-gradient-to-b from-[#13102c] to-[#1b173f] border-indigo-900 border-opacity-100 rounded-2xl">
           <p>#</p>
           <input
             placeholder="your player tag!"
@@ -60,41 +51,42 @@ export const Header = () => {
           />
           <button
             onClick={handleFetchPlayerData}
-            className="mr-1 text-indigo-200 active:text-pink-300 hover:-rotate-12 outline-none"
+            onKeyDown={handleKeyPress}
+            className="mr-1 text-indigo-200 active:text-violet-300 hover:-rotate-12 outline-none"
           >
             <FaSearch />
           </button>
         </div>
-        <Link
-          href="/"
-          className="absolute right-0 mr-[118px] opacity-0 pointer-events-none sm:opacity-100"
-        >
-          <div className="flex justify-center absolute bg-pink-600 text-3xl p-1.5 rounded-lg">
-            <PiCrownSimpleFill />
+        <div className="flex flex-row justify-center absolute right-0 mr-8 sm:mr-4 items-center gap-3">
+          <div className="absolute sm:relative opacity-0  sm:opacity-100">
+            <div className="flex justify-center absolute bg-indigo-700 text-3xl p-1.5 rounded-lg  active:mt-1">
+              <img
+                className="w-max h-8"
+                src="https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoic3VwZXJjZWxsXC9maWxlXC82ZFZwQ2lySDRRZ1lEYU54QkpuVy5wbmcifQ:supercell:cABbBwXluQNg_jzs_sH1kad_INpU7LIyvfsB-ozSAUs?width=800"
+              />
+            </div>
+            <div className="flex justify-center bg-violet-950 mt-1.5 text-3xl  p-1.5 rounded-lg">
+              <img
+                className="w-max h-8"
+                src="https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoic3VwZXJjZWxsXC9maWxlXC82ZFZwQ2lySDRRZ1lEYU54QkpuVy5wbmcifQ:supercell:cABbBwXluQNg_jzs_sH1kad_INpU7LIyvfsB-ozSAUs?width=800"
+              />
+            </div>
           </div>
-          <div className="flex justify-center bg-fuchsia-900 mt-1.5 text-3xl  p-1.5 rounded-lg">
-            <PiCrownSimpleFill />
+          <div className="absolute sm:relative opacity-0  sm:opacity-100">
+            <div className="flex justify-center absolute bg-indigo-700 text-3xl p-1.5 rounded-lg  active:mt-1">
+              <img
+                className="w-max h-8"
+                src="https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoic3VwZXJjZWxsXC9maWxlXC83NWQxejNlMzZ6QXNzbU1URVdCdy5wbmcifQ:supercell:POAaehHzOOrs5AbN4nGFPWrrvJLAs6CKFNCcVEdjWqc?width=800"
+              />
+            </div>
+            <div className="flex justify-center bg-violet-950 mt-1.5 text-3xl  p-1.5 rounded-lg">
+              <img
+                className="w-max h-8"
+                src="https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoic3VwZXJjZWxsXC9maWxlXC83NWQxejNlMzZ6QXNzbU1URVdCdy5wbmcifQ:supercell:POAaehHzOOrs5AbN4nGFPWrrvJLAs6CKFNCcVEdjWqc?width=800"
+              />
+            </div>
           </div>
-        </Link>
-        <Link
-          href="/"
-          className="absolute right-0 mr-16 opacity-0 pointer-events-none sm:opacity-100"
-        >
-          <div className="flex justify-center absolute bg-pink-600 text-3xl p-1.5 rounded-lg">
-            <RiMapFill />
-          </div>
-          <div className="flex justify-center bg-fuchsia-900 mt-1.5 text-3xl  p-1.5 rounded-lg">
-            <RiMapFill />
-          </div>
-        </Link>
-        <Link href="/" className="absolute right-0 mx-2.5">
-          <div className="flex justify-center absolute bg-pink-600 text-3xl p-1.5 rounded-lg active:translate-y-1.5">
-            <GoHomeFill />
-          </div>
-          <div className="flex justify-center bg-fuchsia-900 mt-1.5 text-3xl  p-1.5 rounded-lg pointer-events-none">
-            <GoHomeFill />
-          </div>
-        </Link>
+        </div>
       </div>
     </header>
   );

@@ -15,7 +15,7 @@ interface BrawlerProps {
   };
 }
 
-export const Brawlers = ({ brawler }: BrawlerProps) => {
+export const Highest = ({ brawler }: BrawlerProps) => {
   const portraits: { [key: string]: string } = {
     "BUZZ LIGHTYEAR":
       "https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoic3VwZXJjZWxsXC9maWxlXC9VY0ZScUN6M1NEQXZmV1ZIOTJNUi5wbmcifQ:supercell:2zvB4PUFWzQ4-UG0anUV_8XqtUDCo4PbfQPi3pSjwj0?width=800",
@@ -162,7 +162,7 @@ export const Brawlers = ({ brawler }: BrawlerProps) => {
             className="w-3 pointer-events-none"
             src="https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoic3VwZXJjZWxsXC9maWxlXC9waFFBanJmTTd0bldQSEFQUTNTTS5wbmcifQ:supercell:uGkNlUITV98HQEBqST8RoyNlyyAA7-NCuOKpR45pPUU?width=2400"
           />
-          <p className="text-[11px]">{brawler.trophies}</p>
+          <p className="text-[11px]">{brawler.highestTrophies}</p>
           {/* <p className="ml-1 text-gray-400 text-xs">
             ({brawler.highestTrophies})
           </p> */}
@@ -223,7 +223,7 @@ export const Brawlers = ({ brawler }: BrawlerProps) => {
               </p>
               <img
                 className="z-10"
-                src=""
+                src="https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoic3VwZXJjZWxsXC9maWxlXC9IWmtMUjVpSFhiMjhiR2tZUTRnRy5wbmcifQ:supercell:huyiUL5vEn5QRW5FguBeriafcj_Sf6p8y-OHFNamp1w?width=800"
               />
             </div>
             <div
@@ -250,7 +250,7 @@ export const Brawlers = ({ brawler }: BrawlerProps) => {
               </p>
               <img
                 className="z-10"
-                src=""
+                src="https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoic3VwZXJjZWxsXC9maWxlXC9VVHBWQVRhZFllWHZnZWFEcUJUUi5wbmcifQ:supercell:rK1JECiCSnEg5IhHcehnCXSoC0AR_2Vs68x9ndl_HB4?width=800"
               />
             </div>
           </div>
